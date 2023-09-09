@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        .container {
+            text-align: center;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 80px;
+            margin: 4px;
+            padding: 4px;
+            background-color: #2df93e; 
+            border-radius: 10px; 
+        }
+        .temp
+        {
+            position: static;
+            margin-top: 5px;
+        }
+        input {
+            width: 220px;
+            height: 20px;
+            border-radius: 40px;
+            text-align: center;
+            margin: 5px;
+        }
+        
+        .button {
+            text-align: center;
+            margin-top: 15px; 
+        }
+        
+        .btn {
+            border-radius: 50px;
+            background-color: rgb(249, 181, 45);
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            input {
+                width: 200px;
+                position: static;
+                margin-top: 50px;
+            }
+
+            .container {
+                height: 150px;
+                width: 300px;
+                top: 50%;
+            }
+
+            .button {
+                top: 30%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="temp">
+            <input type="number" id="myInput" placeholder="Enter The Temperature in Celsius !!!">
+        </div>
+        <div class="button">
+            <button class="btn" onclick="getValue()">Submit</button>
+        </div>
+    </div>
+    
+    <script>
+        function getValue() {
+            var inputElement = document.getElementById("myInput");
+            var inputValue = inputElement.value;
+            if (inputValue=="")
+            {
+                alert("Enter Some Value");
+            }
+            else{
+                var convert = ((inputValue * 9 / 5) + 32);
+                alert("Input Value: " + convert);
+            }
+            setTimeout(function() {
+                window.location.reload();
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>
